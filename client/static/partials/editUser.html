@@ -1,0 +1,11 @@
+<form id="editForm" ng-submit="editUser(puser)">
+    <fieldset>
+
+
+        <legend>Edit User</legend>
+        <label id="name">Username: <input type="text" placeholder="{{user.username}}" ng-model="puser.username" size="31" required></label><br>
+        <label id="email">Email Address: <input type="text" placeholder="{{user.email}}" ng-model="puser.email" size="27" required></label><br>
+        <label id="password">Password: <input type="passsword" placeholder="{{user.password}}" ng-model="puser.password" size="31" required></label>
+        <button>Submit</button>
+    </fieldset>
+</form>

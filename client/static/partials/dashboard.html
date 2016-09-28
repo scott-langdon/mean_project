@@ -1,0 +1,154 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#/login">Login</a></li>
+        <li><a ng-click="logOut()"> Log Out </a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group input-group">
+          <input type="text" class="form-control" placeholder="Search..">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/edit"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h1>Welcome, {{current_user.username}}</h1>
+<div class="container text-center">
+  <div class="row">
+
+   <div class="container text-center">
+     <div class="row">
+       <div class="col-sm-3 well">
+         <div class="well">
+           <p><a href="#">Popular Topics</a></p>
+           <p>
+             <a href="#"><span class="label label-default">#HillaryClinton</span></a>
+             <a href="#"><span class="label label-warning">#DonaldTrump</span></a>
+           </p>
+         </div>
+         <div class="alert alert-success fade in">
+           <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+           <p><strong>Ey!</strong></p>
+           People are looking at your profile. Find out who.
+         </div>
+         <p><a href="#">Link</a></p>
+         <p><a href="#">Link</a></p>
+         <p><a href="#">Link</a></p>
+       </div>
+
+    <div class="col-sm-7">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default text-left">
+            <div class="panel-body">
+              <form name="myForm">
+                <fieldset>
+                  <legend>Upload a photo</legend>
+                  Title:
+                  <input type="text" name="title" ng-model="title" size="31" required>
+                  Description:
+                  <input type="text" name="description" ng-model="description" size="31" required>
+                  <!-- <i ng-show="myForm.userName.$error.required">*required</i> -->
+                  <br>Photo:
+                  <input type="file" ngf-select ng-model="picFile" name="file"
+                         accept="image/*" ngf-max-size="2MB" required
+                         ngf-model-invalid="errorFile">
+                  <i ng-show="myForm.file.$error.required">*required</i><br>
+                  <i ng-show="myForm.file.$error.maxSize">File too large
+                      {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+                  <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+                  <br>
+                  <button ng-disabled="!myForm.$valid"
+                          ng-click="uploadPic(picFile)">Submit</button>
+                  <span class="progress" ng-show="picFile.progress >= 0">
+                    <div style="width:{{picFile.progress}}%"
+                        ng-bind="picFile.progress + '%'"></div>
+                  </span>
+                  <span ng-show="picFile.result">Upload Successful</span>
+                  <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+                </fieldset>
+                <br>
+              </form>
+              <form ng-submit="createMessage(addPost)">
+                <legend>Make a post</legend>
+                <label>
+                Title: <input ng-model="addPost.title" type="text">
+                </label>
+                <label>
+                  Description: <input ng-model="addPost.description" type="text">
+                </label>
+                <button>Post</button>
+              </form>
+          </div>
+        </div>
+      </div>
+
+      <div ng-repeat= "topic in topics.data" class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>{{topic._user.username}}</p>
+
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <!-- <img src="../../{{topic.photo}}"/> -->
+            <img src="assets/uploads/{{topic.photoName}}"/>
+            <p>
+              {{topic.title}}
+            </p>
+
+            <p>
+              {{topic.description}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-9">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-9">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-9">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>

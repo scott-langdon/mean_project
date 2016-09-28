@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dashboard</title>
+	<script src="/bower_components/angular/angular.min.js"></script>
+	<script src="/bower_components/angular-route/angular-route.min.js"></script>
+	<script src="/bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+	<script src="/bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+
+	<script src="/app.js"></script>
+
+	<script src="/services/userInterceptor.js"></script>
+	<script src="/services/upload.js"></script>
+
+	<script src="/factories/userFactory.js"></script>
+	<script src="/factories/topicFactory.js"></script>
+	<script src="/factories/messageFactory.js"></script>
+
+
+	<script src="/controllers/usersController.js"></script>
+	<script src="/controllers/topicsController.js"></script>
+	<script src="/controllers/ShowController.js"></script>
+	<script src="/controllers/editUsersController.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Courgette|Raleway" rel="stylesheet">
+<link rel="stylesheet" href="/assets/stylesheet.css" media="screen" title="no title">
+<!-- <link  href="static/assets/uploads"> -->
+
+</head>
+
+<body ng-app="appName">
+	<div ng-view=""></div>
+</body>
+</html>

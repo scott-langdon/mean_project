@@ -1,0 +1,68 @@
+body
+{
+  background-color:#1FC2AD;
+}
+
+h1{
+  font-family:'Courgette', sans-serif;
+
+}
+
+p{
+  font-family: 'Raleway', sans-serif;
+}
+
+footer{
+
+      background-color: black;
+      color: gray;
+      padding: 15px;
+
+}
+
+#myNavbar{
+  font-family:'Raleway', sans-serif;
+}
+.thumb {
+    width: 24px;
+    height: 24px;
+    float: none;
+    position: relative;
+    top: 7px;
+}
+
+form .progress {
+    line-height: 15px;
+}
+}
+
+.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}
+
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}
+
+img{
+  width:400px;
+}
+
+.well{
+padding-right:25px;
+display: inline-block;
+}
+.col-sm-3.well{
+  display:inline-block;
+  margin-right:40px;
+}
+ #editForm{
+  /*border:5px solid black;*/
+  margin-top:10px;
+  width:400px;
+  margin-left:350px;
+}
