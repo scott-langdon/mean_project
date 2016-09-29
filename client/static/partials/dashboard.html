@@ -1,11 +1,11 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#/dashboard">DASHBOARD</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="#/dashboard">Home</a></li>
         <li><a href="#">Messages</a></li>
         <li><a href="#/login">Login</a></li>
         <li><a ng-click="logOut()"> Log Out </a></li>
@@ -41,14 +41,12 @@
              <a href="#"><span class="label label-warning">#DonaldTrump</span></a>
            </p>
          </div>
-         <div class="alert alert-success fade in">
-           <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-           <p><strong>Ey!</strong></p>
-           People are looking at your profile. Find out who.
+         <div class="well">
+           <p>Friends</p>
+           <p><a href="#">Link</a></p>
+           <p><a href="#">Link</a></p>
+           <p><a href="#">Link</a></p>
          </div>
-         <p><a href="#">Link</a></p>
-         <p><a href="#">Link</a></p>
-         <p><a href="#">Link</a></p>
        </div>
 
     <div class="col-sm-7">
@@ -102,7 +100,7 @@
       <div ng-repeat= "topic in topics.data" class="row">
         <div class="col-sm-3">
           <div class="well">
-           <p>{{topic._user.username}}</p>
+           <p><a href="#/topics/{{topic._user._id}}">{{topic._user.username}}</a></p>
 
           </div>
         </div>

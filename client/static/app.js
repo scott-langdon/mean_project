@@ -25,8 +25,8 @@ app.config(function($routeProvider, $httpProvider){
             templateUrl:'partials/dashboard.html',
             controller: 'TopicsController'
         })
-        .when('/topic/:id', {
-            templateUrl:'partials/topic.html',
+        .when('/topics/:id', {
+            templateUrl:'partials/topicUser.html',
             controller: 'ShowController'
         })
         .when('/edit', {

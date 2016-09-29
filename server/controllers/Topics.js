@@ -32,12 +32,24 @@ module.exports = {
   },
   getOne: function(req,res){
     Topic.findOne({_id: req.params.id}).populate('_user').exec(function(err,topic){
-      console.log("hello")
+      // console.log("hello")
       if(err){
         res.sendStatus(400)
       }else{
         res.json(topic)
     }
+    })
+  },
+  getUserID: function(req,res){
+    console.log('#################################')
+    console.log(req.params.id)
+    Topic.find({_user:req.params.id}).populate('_user').exec(function(err,topics){
+      if(err){
+        res.sendStatus(400)
+      }else{
+        console.log(topics)
+        res.json(topics)
+      }
     })
   },
   createMessage: function(req,res){

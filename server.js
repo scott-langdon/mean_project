@@ -36,8 +36,8 @@ app.use(function(req,res,next){
 	console.log(req.session);
 	next();
 })
-
 app.use(express.static(path.join(__dirname,"client", "static")));
+
 /*routes*/
 require('./server/config/routes.js')(app);
 

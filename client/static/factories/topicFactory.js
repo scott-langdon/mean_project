@@ -29,6 +29,17 @@ app.factory('TopicFactory', ['$http', function($http){
           callback(topic);
         })
       },
+      getTopicsOfUser: function(id, callback){
+        $http({
+          method:"GET",
+          url:"/userpage/" + id
+        }).then(function(res){
+          topics.data = res.data
+          // console.log('##################')
+          // console.log(topics)
+          callback(topics);
+        })
+      },
 
   createMessages: function(messages, callback){
       $http({

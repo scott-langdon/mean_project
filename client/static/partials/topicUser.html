@@ -1,0 +1,52 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#/dashboard">DASHBOARD</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#/dashboard">Home</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#/login">Login</a></li>
+        <li><a ng-click="logOut()"> Log Out </a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group input-group">
+          <input type="text" class="form-control" placeholder="Search..">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/edit"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="header">
+    <div class="text-vertical-center" >
+        <p>image here</p>
+        <h1>{{topics.data[0]._user.username}}</h1>
+        <br>
+    </div>
+</div>
+
+<div ng-repeat= "topic in topics.data" class="profile">
+  <div class="col-sm-9">
+    <div class="well">
+      <!-- <img src="../../{{topic.photo}}"/> -->
+      <img src="assets/uploads/{{topic.photoName}}"/>
+      <p>
+        {{topic.title}}
+      </p>
+
+      <p>
+        {{topic.description}}
+      </p>
+    </div>
+  </div>
+</div>
