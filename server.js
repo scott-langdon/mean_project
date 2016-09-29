@@ -4,9 +4,6 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 var session = require('express-session');
 
-
-
-
 var sessionConfig = {
  secret:'CookieMonster', // Secret name for decoding secret and such
  resave:false, // Don't resave session if no changes were made
